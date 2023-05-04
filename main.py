@@ -726,7 +726,6 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.risk_register_groupbox.setTitle(_translate("MainWindow", "Реестр рисков"))
@@ -833,7 +832,6 @@ class Ui_MainWindow(object):
 
     # data loaders
     def risk_data_loader(self):
-
         qcr = queryComposer("risk_register")
         raw_risk_data = qcr.select_query(order_opt=["risk_id"])
         self.risk_data_id_ref = {
@@ -1064,7 +1062,6 @@ class Ui_MainWindow(object):
         self.equip_table_widget.selectRow(0)
 
     def sensor_table_placeholder(self, equipment_id: int):
-
         if int(equipment_id) not in self.equip_sensor_rel.keys():
             logging.warning("No sensor for this equip")
             self.sensor_table_widget.setRowCount(0)
