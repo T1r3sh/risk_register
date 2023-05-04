@@ -9,7 +9,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from db_operation_functions import queryComposer
 import datetime
-import random
 import numpy as np
 
 
