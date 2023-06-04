@@ -128,6 +128,9 @@ util/data_import/datageneraot.ipynb
 util/db_init.py
 util/sql_qq.sql
 main.spec
+build
+dist
+backup
 __pycache__/addEquipFormUI.cpython-310.pyc
 __pycache__/addMeasureUIForm.cpython-310.pyc
 __pycache__/addRiskUIForm.cpython-310.pyc
@@ -147,3 +150,5 @@ __pycache__/risk_matrix_plotter.cpython-310.pyc
 __pycache__/risk_register_data.cpython-310.pyc
 __pycache__/test_thing.cpython-310.pyc
 util/__pycache__/db_operation_functions.cpython-310.pyc
+Карта рисков № 3.docx
+backup/reportDialogWindow_ui.py
