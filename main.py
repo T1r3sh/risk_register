@@ -27,6 +27,7 @@ from newAddRiskUIForm import addRiskUIDialog
 from newEditPMUIForm import editMeasureUIDialog
 from newAddPMUIForm import addMeasureUIDialog
 from plot_opt import risk_matrix_, last_sensor_plot
+from risk_map_FORM import risk_map_report_UIDialog
 
 csfont = {"fontname": "Calibri"}
 matplotlib.rcParams["font.family"] = "Calibri"
@@ -173,7 +174,7 @@ class Ui_MainWindow(object):
         self.risk_register_groupbox.setObjectName("risk_register_groupbox")
 
         self.h_layout_widget_1 = QtWidgets.QWidget(parent=self.risk_register_groupbox)
-        self.h_layout_widget_1.setGeometry(QtCore.QRect(10, 10, 615, 45))
+        self.h_layout_widget_1.setGeometry(QtCore.QRect(10, 10, 685, 45))
         self.h_layout_widget_1.setObjectName("h_layout_widget_1")
         self.h_layout_widget_2 = QtWidgets.QHBoxLayout(self.h_layout_widget_1)
         self.h_layout_widget_2.setContentsMargins(0, 0, 0, 0)
@@ -200,10 +201,18 @@ class Ui_MainWindow(object):
         self.h_layout_widget_2.addWidget(self.risk_refresh_button)
 
         self.risk_matrix_button = QtWidgets.QPushButton(parent=self.h_layout_widget_1)
-        self.risk_matrix_button.setObjectName("risk_refresh_button")
+        self.risk_matrix_button.setObjectName("risk_matrix_button")
         self.risk_matrix_button.setText("Матрица рисков")
         self.risk_matrix_button.clicked.connect(risk_matrix_)
         self.h_layout_widget_2.addWidget(self.risk_matrix_button)
+
+        self.risk_map_report_button = QtWidgets.QPushButton(
+            parent=self.h_layout_widget_1
+        )
+        self.risk_map_report_button.setObjectName("risk_map_report_button")
+        self.risk_map_report_button.setText("Карта рисков")
+        self.risk_map_report_button.clicked.connect(self.risk_map_report_button_slot)
+        self.h_layout_widget_2.addWidget(self.risk_map_report_button)
 
         self.risk_register_table_widget = QtWidgets.QTableWidget(
             parent=self.risk_register_groupbox
@@ -1192,6 +1201,16 @@ class Ui_MainWindow(object):
         editPMDialogWindow.setupUi(Dialog, self.current_pm_id)
         Dialog.exec()
         self.pm_refresh_button_slot()
+
+    def risk_map_report_button_slot(self):
+        """_summary_"""
+        # app = QtWidgets.QApplication(sys.argv)
+        # app.setFont(QtGui.QFont("Segoe UI", 8))
+        Dialog = QtWidgets.QDialog()
+        Dialog.setFont(QtGui.QFont("Segoe UI", 8))
+        ui = risk_map_report_UIDialog()
+        ui.setupUi(Dialog)
+        Dialog.exec()
 
     def sensor_edit_button_slot(self):
         """_summary_"""
